@@ -1,18 +1,22 @@
 from turtle import Turtle,Screen
-from snake import Snake
+from snake import Snake 
 import random
-import time #1 Import the time module to control the speed of the snake
+import time   #1 Import the time module to control the speed of the snake
 
 
 screen = Screen()
 screen.setup(width=600,height=600)
 screen.bgcolor("black")
-screen.title("Snake Game")
-screen.tracer(0)
+screen.title("My Snake Game")
+screen.tracer(0)  # Turn off automatic screen updates for smoother animation
 
 
 snake = Snake()
-
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
 
 game_is_on = True
 while game_is_on:
@@ -21,18 +25,6 @@ while game_is_on:
 
     snake.move()  # Move the snake forward
      
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
